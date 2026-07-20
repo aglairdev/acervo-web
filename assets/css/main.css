@@ -1,0 +1,268 @@
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+--bg:        #120a1d;
+    --surface:   #1e122d;
+    --border:    #bf94ff; 
+    --text:      #f3ebff;
+    --muted:     #8e7da5;
+    --accent:    #ff79c6; 
+    --danger:    #ff5555;
+    --warning:   #f1fa8c;
+    --info:      #8be9fd;
+    --scanline:  rgba(0,0,0,0.3);
+    --footer-bg: #0d0715;
+      --font-main: 'Press Start 2P', monospace;
+    }
+    html, body { height: 100%; margin: 0; }
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background-color: var(--bg);
+      background-image:
+        repeating-linear-gradient(
+          0deg,
+          var(--scanline) 0px,
+          var(--scanline) 1px,
+          transparent 1px,
+          transparent 4px
+        );
+      color: var(--text);
+      font-family: var(--font-main);
+      min-height: 100vh;
+      padding: 0 1rem 0;
+    }
+    main {
+      flex: 1;
+    }
+    .page-content { flex: 1; padding-bottom: 2rem; }
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-32px); }
+      to   { opacity: 1; transform: translateY(0);     }
+    }
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(32px); }
+      to   { opacity: 1; transform: translateY(0);    }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0; }
+    }
+    .anim-slide-down { animation: slideDown 0.55s cubic-bezier(.22,.68,0,1.2) both; }
+    .anim-slide-up   { animation: slideUp  0.55s cubic-bezier(.22,.68,0,1.2) both; }
+    .anim-fade       { animation: fadeIn   0.6s ease both; }
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.22s; }
+    .delay-3 { animation-delay: 0.36s; }
+    header {
+      text-align: center;
+      padding: 2.8rem 1rem 2rem;
+    }
+    .logo-sprite {
+      image-rendering: pixelated;
+      margin-bottom: 1rem;
+    }
+    header h1 {
+      font-size: clamp(1rem, 4vw, 1.6rem);
+      color: var(--accent);
+      text-shadow: 4px 4px 0 #2a5a00, 6px 6px 0 #000;
+      letter-spacing: 2px;
+      line-height: 1.6;
+    }
+    header p {
+      margin-top: 1rem;
+      font-size: 0.5rem;
+      color: var(--muted);
+      letter-spacing: 1px;
+    }
+    .cursor {
+      display: inline-block;
+      animation: blink 1s step-end infinite;
+      color: var(--accent);
+    }
+    .search-wrap {
+      max-width: 720px;
+      margin: 0 auto 2rem;
+    }
+    .search-box {
+      display: flex;
+      gap: 0.5rem;
+      align-items: stretch;
+      flex-wrap: wrap;
+    }
+    .search-box .nes-input {
+      flex: 1 1 200px;
+      font-family: var(--font-main);
+      font-size: 0.6rem;
+      background: var(--surface);
+      color: var(--text);
+      border-image-source: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='5' height='5'><path d='M2 1 h1 v1 h-1z M1 2 h1 v1 h-1z M3 2 h1 v1 h-1z M2 3 h1 v1 h-1z' fill='%233a3a5c'/></svg>");
+    }
+    .search-box .nes-input::placeholder { color: var(--muted); }
+    .search-box .nes-btn {
+      font-family: var(--font-main);
+      font-size: 0.55rem;
+      white-space: nowrap;
+    }
+    .stats-bar {
+      font-size: 0.45rem;
+      color: var(--muted);
+      margin-top: 0.75rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+    .stats-bar span { color: var(--accent); }
+    .results-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .result-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding: 0.9rem 1rem;
+      margin-bottom: 0.6rem;
+      background: var(--surface);
+      border: 3px solid var(--border);
+      border-radius: 0;
+      flex-wrap: wrap;
+      animation: slideUp 0.3s ease both;
+    }
+    .result-item:hover {
+      border-color: var(--accent);
+      background: #1f1f38;
+    }
+    .rom-info { flex: 1 1 200px; }
+    .rom-name {
+      font-size: 0.55rem;
+      color: var(--text);
+      margin-bottom: 0.45rem;
+      line-height: 1.6;
+    }
+    .rom-meta {
+      font-size: 0.42rem;
+      color: var(--muted);
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+    .rom-meta .tag-console {
+      color: var(--info);
+      background: rgba(32,156,238,0.12);
+      padding: 2px 6px;
+      border: 1px solid var(--info);
+    }
+    .rom-meta .tag-size  { color: var(--warning); }
+    .rom-meta .tag-date  { color: var(--muted); }
+    .btn-download {
+      font-family: var(--font-main) !important;
+      font-size: 0.45rem !important;
+      white-space: nowrap;
+    }
+    .state-msg {
+      text-align: center;
+      padding: 3rem 1rem;
+      font-size: 0.5rem;
+      color: var(--muted);
+      line-height: 2;
+    }
+    .state-msg .icon { font-size: 2rem; display: block; margin-bottom: 1rem; }
+    .nes-container {
+      background: var(--surface);
+      color: var(--text);
+    }
+    .nes-container.with-title > .title {
+      background: var(--surface);
+      color: var(--accent);
+      font-size: 0.55rem;
+    }
+    footer {
+      font-family: var(--font-main);
+      background: var(--footer-bg);
+      border-top: 2px solid var(--border);
+    }
+    .footer-statusbar {
+      background: var(--surface);
+      border-bottom: 1px solid rgba(0,0,0,0.4);
+      padding: 0.6rem 1.2rem;
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .footer-status-item {
+      font-size: 0.45rem;
+      color: var(--muted);
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .footer-val {
+      color: var(--accent);
+    }
+    .footer-link {
+      text-decoration: none;
+      transition: color 0.15s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+    .footer-link:hover {
+      color: var(--text);
+    }
+    .footer-link .arrow {
+      font-size: 0.65rem;
+      line-height: 1;
+    }
+    .footer-bottom {
+      padding: 0.9rem 1.2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .footer-policy {
+      font-size: 0.42rem;
+      color: var(--muted);
+      letter-spacing: 1px;
+    }
+    .footer-brand {
+      font-size: 0.42rem;
+      color: var(--muted);
+      letter-spacing: 2px;
+      cursor: default;
+      transition: color 0.15s;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      line-height: 1;
+    }
+    .footer-brand .brand-symbol {
+      font-size: 0.75rem;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+    }
+    .footer-brand:hover {
+      color: var(--accent);
+    }
+    @media (max-width: 480px) {
+      .footer-statusbar { gap: 0.9rem; padding: 0.75rem 1rem; }
+      .footer-status-item { font-size: 0.42rem; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; gap: 0.6rem; padding: 0.9rem 1rem; }
+      .footer-policy { font-size: 0.38rem; }
+      .footer-brand { align-self: flex-end; }
+      header h1 { font-size: 0.9rem; }
+      .result-item { padding: 0.75rem; }
+      .rom-name { font-size: 0.48rem; }
+      .search-box .nes-btn { width: 100%; }
+    }
