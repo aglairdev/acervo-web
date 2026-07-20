@@ -1,10 +1,31 @@
-# Acervo ꕤ
+<details>
+<summary>tentei pensar em algo criativo para colocar aqui</summary>
+<details>
+<summary>mas será que alguém vai ler?</summary>
+<details>
+<summary>por que minha motivação caiu quando percebi que era algo feito para mim?</summary>
+<details>
+<summary>como sei que apenas eu lerei, não há necessidade de vergonha</summary>
+<details>
+<summary>... certo?</summary>
+<details>
+<summary>eu queria poder saber lidar melhor</summary>
+<details>
+<summary>ou que isso fosse suficiente</summary>
+<details>
+<summary>...</summary>
+  
+[![Deploy](https://img.shields.io/badge/hakuna-matata-00C7B7?style=flat&logo=Netlify)](https://acervobr.netlify.app)
+[![Deploy](https://img.shields.io/badge/elindo-viver-000000?style=flat&logo=Netlify)](https://gamefetch.netlify.app)
 
-Interface web para buscar e indexar ROMs localmente.
-
-## Demo
-
-<img width="1816" height="934" alt="2026-05-11_02-49" src="https://github.com/user-attachments/assets/5efa05a3-1d21-4751-8f5f-19dedca8f285" />
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
 
 ## Config
 
@@ -30,8 +51,7 @@ Também precisa do arquivo `index.json`:
 
 ## Créditos
 
-- Framework: [NES.css](https://nostalgic-css.github.io/NES.css/).
-- Fonte: [Press Start 2P via Google Fonts](https://fonts.google.com/specimen/Press+Start+2P).
-<hr>
+- Framework: [NES.css](https://nostalgic-css.github.io/NES.css/)
+- Fonte: [Press Start 2P via Google Fonts](https://fonts.google.com/specimen/Press+Start+2P)
 
-> Apenas para fins educacionais.
+<p align="center">ꕤ AGL</p>
